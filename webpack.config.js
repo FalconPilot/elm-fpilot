@@ -1,20 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const env = [
-  'NODE_ENV',
-  'PORT'
-].reduce((acc, key) => ({ ...acc, [key]: process.env[key] }))
-
-Object.entries(env).forEach(([key, val]) => {
-  if (!val) {
-    throw new Error(`Environment variable ${key} should be defined !`)
-  }
-})
-
 module.exports = {
   mode: (
-    env.NODE_ENV === 'development'
+    process.env.NODE_ENV === 'development'
       ? 'development'
       : 'production'
   ),
@@ -56,7 +45,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'src'),
-    port: env.PORT,
+    port: process.env.PORT,
     historyApiFallback: true
   }
 }
