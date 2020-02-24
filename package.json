@@ -13,7 +13,7 @@
     "init": "shx mkdir dist",
     "reset": "yarn run clean && yarn run init",
     "dev": "dotenv webpack-dev-server",
-    "build": "yarn run reset && webpack --progress"
+    "build": "yarn run reset && webpack"
   },
   "dependencies": {},
   "devDependencies": {
