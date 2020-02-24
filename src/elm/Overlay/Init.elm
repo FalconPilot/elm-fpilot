@@ -4,4 +4,10 @@ import Overlay.Types.Core exposing (Model, Msg, Flags)
 
 init: Flags -> (Model, Cmd Msg)
 init flags =
-  ({}, Cmd.none)
+  let
+    model: Model
+    model =
+      { flags = flags
+      }
+  in
+    (model, Cmd.none)

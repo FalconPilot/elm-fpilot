@@ -1,8 +1,15 @@
-module App.Types.Core exposing (Model, Msg(..), Flags)
+module App.Types.Core exposing (Flags, Model, Msg(..))
 
-type alias Model = {}
+import Common.Types exposing (Env)
 
-type alias Flags = {}
+type alias Flags =
+  { overlayRootId: String
+  , env: Env
+  }
+
+type alias Model =
+  { flags: Flags
+  }
 
 type Msg
   = NoOp

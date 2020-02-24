@@ -7,4 +7,10 @@ import App.Types.Core exposing (Model, Msg, Flags)
 
 init: Flags -> Url -> Key -> (Model, Cmd Msg)
 init flags url key =
-  ({}, Cmd.none)
+  let
+    model: Model
+    model =
+      { flags = flags
+      }
+  in
+    (model, Cmd.none)

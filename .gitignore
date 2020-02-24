@@ -7,3 +7,4 @@ dist
 
 # Artifacts
 *.DS_Store
+.env
