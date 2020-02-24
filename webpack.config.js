@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const env = [
+  'NODE_ENV',
   'PORT'
 ].reduce((acc, key) => ({ ...acc, [key]: process.env[key] }))
 
@@ -12,6 +13,11 @@ Object.entries(env).forEach(([key, val]) => {
 })
 
 module.exports = {
+  mode: (
+    env.NODE_ENV === 'development'
+      ? 'development'
+      : 'production'
+  ),
   entry: {
     elm: [
       path.join(__dirname, 'src', 'elm', 'App.elm'),
@@ -46,7 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       path: path.join(__dirname, 'static', 'index.html'),
       inject: 'body'
-    }),
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, 'src'),

@@ -11,8 +11,8 @@
     "clean": "shx rm -rf dist",
     "init": "shx mkdir dist",
     "reset": "yarn run clean && yarn run init",
-    "dev": "yarn run reset && dotenv webpack-dev-server",
-    "build": "yarn run reset && elm make src/elm/App.elm src/elm/Overlay.elm --output=\"dist/elm.js\""
+    "dev": "dotenv webpack-dev-server",
+    "build": "yarn run reset && webpack"
   },
   "dependencies": {},
   "devDependencies": {
