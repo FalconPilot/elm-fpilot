@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+elm-stuff
+
+# Build
+dist
+
+# Artifacts
+*.DS_Store
